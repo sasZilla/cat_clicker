@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cat Clicker</title>
+  <style type="text/css">
+    .hide {
+      display: none;
+    }
+
+    .show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div id="catView">
+    <div id="catName"></div>
+    <div id="catClickCount"></div>
+    <img id="catPic" src="" />
+  </div>
+  <div id="adminView">
+    <button id="adminBtn">Admin</button>
+    <form id="catAdminForm" method="post" class="hide">
+      <div>
+        <label for="catInputName">Cat Name</label>
+        <input id="catInputName" name="catInputName" value="" />
+      </div>
+      <div>
+        <label for="catClickCount">Cat Click Count</label>
+        <input id="catClickCount" name="catClickCount" value="" />
+      </div>
+      <div>
+        <label for="catInputImg">Cat Image</label>
+        <input id="catInputImg" name="catInputImg" value="" />
+      </div>
+      <div>
+        <input id="catAdminCancelBtn" type="reset" value="Cancel"/>
+        <input id="catAdminSubmitBtn" type="submit" value="Submit"/>
+      </div>
+    </form>
+  </div>
+
+  <ul id="catsBtns" data-bind="foreach: cats">
+    <li data-bind="text: name, click: $parent.showCat"></li>
+  </ul>
+
+  <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>
